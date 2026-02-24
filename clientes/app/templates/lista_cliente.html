@@ -4,21 +4,17 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Listagem de Clientes</title>
+    <title>Listagem de Cliente</title>
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full'%}
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Listagem de clientes</h1> 
-    {% for cliente in object_list %}
+    <h1>{{cliente.nome}}</h1> 
       <li>{{ cliente.nome }}</li>
       <li>{{ cliente.email }}</li>
       <li>{{ cliente.data_nascimento }}</li>
       <li>{{ cliente.profissao }}</li>
-      <li><a href={% url "lista_cliente" pk="cliente.id" %}>Exibir</a></li>
-      <li><a href={% url "editar_cliente" pk="cliente.id" %}>Editar</a></li>
-    {% endfor %}
 
   </body>
 </html>

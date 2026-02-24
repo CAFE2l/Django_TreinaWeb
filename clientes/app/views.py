@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView,ListView, UpdateView
+from django.views.generic import CreateView,ListView, UpdateView, DetailView
 from .models import Cliente
 
 class ClienteCreateView(CreateView):
@@ -17,3 +17,8 @@ class ClienteUpdateView(UpdateView):
     fields = "__all__"
     template_name = "form_cliente.html"
     succes_url = reverse_lazy("lista_clientes")
+
+class ClienteDetailView(DetailView):
+    model = Cliente
+    template_name = "lista_clientes.html"
+    context_object_name = "cliente"
