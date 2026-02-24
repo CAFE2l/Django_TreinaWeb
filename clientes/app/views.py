@@ -16,3 +16,4 @@ class ClienteUpdateView(UpdateView):
     model = Cliente
     fields = "__all__"
     template_name = "form_cliente.html"
+    succes_url = reverse_lazy("lista_clientes")
